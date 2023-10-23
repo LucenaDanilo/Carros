@@ -1,1 +1,15 @@
-<h3>oi linde tome na boca</h3>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+</head>
+    {% block content %}
+        <body>
+            {% for car in carros %}
+                <h1>{{car.brand}} - {{car}}</h1>
+            {% endfor %}
+        </body>
+    {% endblock %}
+</html>
