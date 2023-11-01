@@ -3,11 +3,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from cars.views import cars_view
+from cars.views import cars_view, new_car_view
 from motos.views import motos_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cars/', cars_view),
-    path('motos/', motos_view)
+    path('cars/', cars_view, name="cars_list"),
+    path('motos/', motos_view),
+    path('new_car/', new_car_view, name='new_car'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
