@@ -5,9 +5,13 @@ from django.conf.urls.static import static
 
 from cars.views import cars_view, new_car_view
 from motos.views import motos_view
+from accounts.views import register_view, login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', register_view, name = 'register'),
+    path('login/', login_view, name = 'login'),
+    path('logout/', logout_view, name = 'logout'),
     path('cars/', cars_view, name="cars_list"),
     path('motos/', motos_view),
     path('new_car/', new_car_view, name='new_car'),
